@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"shuai.ga","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="平时我是挺喜欢用清单类软件来记录的，当你做完一件事，点击完成划勾时，那一抹淡淡的成就感，无与伦比。我平时用清单软件很常用的一个功能，是做记录类的列表，比如说我有几个清单是：待看电影：没看过的方便查，看过的划掉。心愿单：平时想剁手的商品太多了，想起来一个就记录下来。超市购物单：缺啥了记录下来，比如发现沐浴露快用完了就写上，下次在超市就可以翻看，避免那种买完回家想起来 XX 还没买的窘境。我现在用的是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="巧用 Markdown 功能实现滴答清单会员功能——更多子任务">
+<meta property="og:url" content="http://shuai.ga/use-markdown-function-to-achieve-ticktick-membership-function-more-subtasks/index.html">
+<meta property="og:site_name" content="闲情偶寄">
+<meta property="og:description" content="平时我是挺喜欢用清单类软件来记录的，当你做完一件事，点击完成划勾时，那一抹淡淡的成就感，无与伦比。我平时用清单软件很常用的一个功能，是做记录类的列表，比如说我有几个清单是：待看电影：没看过的方便查，看过的划掉。心愿单：平时想剁手的商品太多了，想起来一个就记录下来。超市购物单：缺啥了记录下来，比如发现沐浴露快用完了就写上，下次在超市就可以翻看，避免那种买完回家想起来 XX 还没买的窘境。我现在用的是">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shuai.ga/content/images/2020/01/sp200108_175733.png">
+<meta property="og:image" content="http://shuai.ga/content/images/2020/01/ezgif-7-d50c393216de.gif">
+<meta property="article:published_time" content="2020-01-08T02:34:01.000Z">
+<meta property="article:modified_time" content="2020-01-08T03:28:17.000Z">
+<meta property="article:author" content="FINE">
+<meta property="article:tag" content="digital">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shuai.ga/content/images/2020/01/sp200108_175733.png">
+
+<link rel="canonical" href="http://shuai.ga/use-markdown-function-to-achieve-ticktick-membership-function-more-subtasks/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>巧用 Markdown 功能实现滴答清单会员功能——更多子任务 | 闲情偶寄</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">闲情偶寄</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://shuai.ga/use-markdown-function-to-achieve-ticktick-membership-function-more-subtasks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FINE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闲情偶寄">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          巧用 Markdown 功能实现滴答清单会员功能——更多子任务
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-01-08 10:34:01 / Modified: 11:28:17" itemprop="dateCreated datePublished" datetime="2020-01-08T10:34:01+08:00">2020-01-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>平时我是挺喜欢用清单类软件来记录的，当你做完一件事，点击完成划勾时，那一抹淡淡的成就感，无与伦比。</p><p>我平时用清单软件很常用的一个功能，是做记录类的列表，比如说我有几个清单是：</p><ol><li>待看电影：没看过的方便查，看过的划掉。</li><li>心愿单：平时想剁手的商品太多了，想起来一个就记录下来。</li><li>超市购物单：缺啥了记录下来，比如发现沐浴露快用完了就写上，下次在超市就可以翻看，避免那种买完回家想起来 XX 还没买的窘境。</li></ol><p>我现在用的是滴答清单，支持全平台，同步方便。遇到唯一一个困扰就是：对于滴答清单非会员用户，设置一个任务最大只支持19个子任务。大部分情况下对于一个列表是够了，所以也理解官方将其列为会员功能。</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/2020/01/sp200108_175733.png" class="kg-image"><figcaption>非会员设置一个任务最大只支持19个子任务</figcaption></figure><p>但是某些情况比如待看电影，其实经常攒一堆想看的电影放进列表。对于这种偶尔的需求，专程买会员也确实不是刚需，所以我以前都是再建一个列表。</p><p>直到刚才我突然想起来，滴答清单最近支持 Markdown 了，而且它的任务详情可以在“列表”和“描述”两种方式切换。</p><p>那有没有可能我直接用 Markdown 的任务列表（又叫复选框）语法结合滴答清单的"任务描述"，做无限数量的todolist? </p><p>立马测试，我把原本的列表用 Markdown 编辑器 Yu Writer 批量加了"任务列表"格式，复制到滴答清单，结果——</p><figure class="kg-card kg-image-card"><img src="/content/images/2020/01/ezgif-7-d50c393216de.gif" class="kg-image"></figure><p>测试证明是可以的！数量不够时不用再建一个列表了，仰天大笑一秒钟！</p><p>介绍一下具体用法如下：<em>（估计看这篇的应该不会有人不懂）</em></p><blockquote>- [ ]  待办<br>- [X] 已完成</blockquote><p>上面两行分别表示为未划掉和已划掉的任务。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/digital/" rel="tag"># digital</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/make-the-world-a-tiny-tiny-little-different/" rel="prev" title="Make a tiny little difference in the world">
+      <i class="fa fa-chevron-left"></i> Make a tiny little difference in the world
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/stick-to-small-habits-of-a-lifetime/" rel="next" title="坚持一生的小习惯">
+      坚持一生的小习惯 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FINE</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FINE</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
