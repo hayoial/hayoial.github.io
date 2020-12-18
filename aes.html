@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"shuai.ga","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="title: AES加密 layout: page             		AES加密 		 			body { width: 600px; margin: 20px auto; } 			label { display: block; } 			div { margin-top: 20px; } 			div#controls, div#help { text-align: center;">
+  <meta name="description" content="AES加密 		 			body { width: 600px; margin: 20px auto; } 			label { display: block; } 			div { margin-top: 20px; } 			div#controls, div#help { text-align: center; } 			textarea{ 			    bord">
 <meta property="og:type" content="website">
 <meta property="og:title" content="闲情偶寄">
 <meta property="og:url" content="https://shuai.ga/aes">
 <meta property="og:site_name" content="闲情偶寄">
-<meta property="og:description" content="title: AES加密 layout: page             		AES加密 		 			body { width: 600px; margin: 20px auto; } 			label { display: block; } 			div { margin-top: 20px; } 			div#controls, div#help { text-align: center;">
+<meta property="og:description" content="AES加密 		 			body { width: 600px; margin: 20px auto; } 			label { display: block; } 			div { margin-top: 20px; } 			div#controls, div#help { text-align: center; } 			textarea{ 			    bord">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-18T07:49:52.219Z">
-<meta property="article:modified_time" content="2020-12-18T07:49:52.219Z">
+<meta property="article:published_time" content="2020-12-18T11:54:36.819Z">
+<meta property="article:modified_time" content="2020-12-18T11:54:36.819Z">
 <meta property="article:author" content="FINE">
 <meta name="twitter:card" content="summary">
 
@@ -178,9 +178,7 @@
       
       
       <div class="post-body">
-          title: AES加密
-layout: page
-          <!doctype html>
+                    <!doctype html>
 <html><head>
 		<title>AES加密</title>
 		<style type="text/css">
@@ -227,20 +225,19 @@ function decrypt()
 		</script></head>
 		
 	<body>
-		<label for="passphrase">密码 (<a href="https://pwgen.foxfilm.com" target="_blank">生成</a>):</label>
+		<label for="passphrase">密码 (默认为当前日期):</label>
 		<input  type="text" id="passphrase">
 		<div id="plaintext_div">
-			<label for="plaintext">原文（解密后文字）：</label>
+			<label for="plaintext">原文</label>
 			<textarea id="plaintext" wrap="soft"></textarea>
 		</div>
 		<div id="controls">
-			<button type="button" id="id_copy" data-clipboard-target="#plaintext" data-clipboard-action="copy" >复制原文</button><a href="" onclick="decrypt(); return false;">&lt;&lt; 解密</a>
-			<a href="" onclick="encrypt(); return false;">加密 &gt;&gt;</a><button type="button" id="id_copy" data-clipboard-target="#ciphertext" data-clipboard-action="copy" >复制密文</button>
+			<a href="" onclick="decrypt(); return false;" id="id_copy" data-clipboard-target="#plaintext" data-clipboard-action="copy" >&lt;&lt; 解密</a>
+			<a href="" onclick="encrypt(); return false;" id="id_copy" data-clipboard-target="#ciphertext" data-clipboard-action="copy">加密 &gt;&gt;</a>
 		</div>
 		<div id="ciphertext_div">
-			<label for="ciphertext">密文（加密后文字）：</label>
+			<label for="ciphertext">密文</label>
 			<textarea id="ciphertext" wrap="soft"></textarea>
-		</div>
 		</div>
 
 	<script>
