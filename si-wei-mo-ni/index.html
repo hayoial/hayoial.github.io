@@ -19,13 +19,13 @@
     <meta name="description" content="&amp;#x7ECF;&amp;#x5E38;&amp;#x5728;&amp;#x8111;&amp;#x5B50;&amp;#x91CC;&amp;#x505A;&amp;#x601D;&amp;#x7EF4;&amp;#x8BAD;&amp;#x7EC3;&amp;#xFF0C;&amp;#x5C31;&amp;#x50CF;&amp;#x9A6C;&amp;#x4F2F;&amp;#x5EB8;&amp;#x8BF4;&amp;#x7684;&amp;#x90A3;&amp;#x6837;&amp;#xFF0C;&amp;#x4ECE;&amp;#x4E00;&amp;#x4E2A;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="思维模拟">
-<meta property="og:url" content="https://hayoial.github.io/si-wei-mo-ni/">
+<meta property="og:url" content="https://imhay.eu.org/si-wei-mo-ni/">
 <meta property="og:site_name" content="闲情偶寄">
 <meta property="og:description" content="&amp;#x7ECF;&amp;#x5E38;&amp;#x5728;&amp;#x8111;&amp;#x5B50;&amp;#x91CC;&amp;#x505A;&amp;#x601D;&amp;#x7EF4;&amp;#x8BAD;&amp;#x7EC3;&amp;#xFF0C;&amp;#x5C31;&amp;#x50CF;&amp;#x9A6C;&amp;#x4F2F;&amp;#x5EB8;&amp;#x8BF4;&amp;#x7684;&amp;#x90A3;&amp;#x6837;&amp;#xFF0C;&amp;#x4ECE;&amp;#x4E00;&amp;#x4E2A;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-01T22:13:00.000Z">
 <meta property="article:modified_time" content="2020-01-02T06:01:09.000Z">
-<meta property="article:author" content="Fine 的博客">
+<meta property="article:author" content="Fine">
 <meta property="article:tag" content="thoughts">
 <meta name="twitter:card" content="summary">
 
@@ -101,6 +101,10 @@
         </div>
         
         <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
             
             
             
@@ -327,6 +331,37 @@
 
 <script src="/js/script.js"></script>
 
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
 
     
 </body>

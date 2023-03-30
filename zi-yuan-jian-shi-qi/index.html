@@ -19,19 +19,19 @@
     <meta name="description" content="&amp;#x8D44;&amp;#x6E90;&amp;#x76D1;&amp;#x89C6;&amp;#x5668;&amp;#x53D1;&amp;#x73B0; Windows &amp;#x81EA;&amp;#x5E26;&amp;#x7684;&amp;#x201C;&amp;#x8D44;&amp;#x6E90;&amp;#x76D1;&amp;#x89C6;&amp;#x5668;&amp;#x201D;&amp;#xFF0C;&amp;#x627E;&amp;#x51FA;&amp;#x6B63;&amp;#x5728;&amp;#x4E0A;&amp;#x7F51">
 <meta property="og:type" content="article">
 <meta property="og:title" content="资源监视器">
-<meta property="og:url" content="https://hayoial.github.io/zi-yuan-jian-shi-qi/">
+<meta property="og:url" content="https://imhay.eu.org/zi-yuan-jian-shi-qi/">
 <meta property="og:site_name" content="闲情偶寄">
 <meta property="og:description" content="&amp;#x8D44;&amp;#x6E90;&amp;#x76D1;&amp;#x89C6;&amp;#x5668;&amp;#x53D1;&amp;#x73B0; Windows &amp;#x81EA;&amp;#x5E26;&amp;#x7684;&amp;#x201C;&amp;#x8D44;&amp;#x6E90;&amp;#x76D1;&amp;#x89C6;&amp;#x5668;&amp;#x201D;&amp;#xFF0C;&amp;#x627E;&amp;#x51FA;&amp;#x6B63;&amp;#x5728;&amp;#x4E0A;&amp;#x7F51">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hayoial.github.io/content/images/2020/01/sp200106_202107.png">
-<meta property="og:image" content="https://hayoial.github.io/content/images/2020/01/sp200106_201502.png">
-<meta property="og:image" content="https://hayoial.github.io/content/images/2020/01/sp200106_201331-1.png">
+<meta property="og:image" content="https://imhay.eu.org/content/images/2020/01/sp200106_202107.png">
+<meta property="og:image" content="https://imhay.eu.org/content/images/2020/01/sp200106_201502.png">
+<meta property="og:image" content="https://imhay.eu.org/content/images/2020/01/sp200106_201331-1.png">
 <meta property="article:published_time" content="2020-01-06T04:24:40.000Z">
 <meta property="article:modified_time" content="2020-01-06T22:34:59.000Z">
-<meta property="article:author" content="Fine 的博客">
+<meta property="article:author" content="Fine">
 <meta property="article:tag" content="digital">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hayoial.github.io/content/images/2020/01/sp200106_202107.png">
+<meta name="twitter:image" content="https://imhay.eu.org/content/images/2020/01/sp200106_202107.png">
 
 
 
@@ -105,6 +105,10 @@
         </div>
         
         <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
             
             
             
@@ -331,6 +335,37 @@
 
 <script src="/js/script.js"></script>
 
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
 
     
 </body>
