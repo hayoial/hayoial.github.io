@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>一次通过ChatGPT学习防火墙知识的记录 - 闲情偶寄</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="我就是一个奇怪的网海冲浪客。">
+
+
+
+
+
+    <meta name="description" content="&amp;#x63D0;&amp;#x95EE;&amp;#xFF1A;&amp;#x9632;&amp;#x706B;&amp;#x5899;&amp;#x89C4;&amp;#x5219;&amp;#x91CC;&amp;#x7684;remote&amp;#x548C;local&amp;#x662F;&amp;#x4EC0;&amp;#x4E48;&amp;#x610F;&amp;#x601D; GPT&amp;#x56DE;&amp;#x7B54;&amp;#xFF1A;  &amp;#x5728;&amp;#x9632;&amp;#x706B;&amp;#x5899">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一次通过ChatGPT学习防火墙知识的记录">
+<meta property="og:url" content="https://imhay.eu.org/post/A-record-of-learning-about-firewalls-through-ChatGPT/">
+<meta property="og:site_name" content="闲情偶寄">
+<meta property="og:description" content="&amp;#x63D0;&amp;#x95EE;&amp;#xFF1A;&amp;#x9632;&amp;#x706B;&amp;#x5899;&amp;#x89C4;&amp;#x5219;&amp;#x91CC;&amp;#x7684;remote&amp;#x548C;local&amp;#x662F;&amp;#x4EC0;&amp;#x4E48;&amp;#x610F;&amp;#x601D; GPT&amp;#x56DE;&amp;#x7B54;&amp;#xFF1A;  &amp;#x5728;&amp;#x9632;&amp;#x706B;&amp;#x5899">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://imhay.eu.org/content/images/2023/03/2023_0308_1627.jpg">
+<meta property="article:published_time" content="2023-03-08T08:19:00.000Z">
+<meta property="article:modified_time" content="2023-04-03T04:06:44.763Z">
+<meta property="article:author" content="Fine">
+<meta property="article:tag" content="gpt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imhay.eu.org/content/images/2023/03/2023_0308_1627.jpg">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    闲情偶寄
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">归档</a>
+            
+            <a class="navbar-item "
+               href="/categories">分类</a>
+            
+            <a class="navbar-item "
+               href="/tags">标签</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            一次通过ChatGPT学习防火墙知识的记录
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2023-03-08T08:19:00.000Z" itemprop="datePublished">3月 8 2023</time>
+                <span class="second-date-block"> (3月 8 2023)</span>
+            
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/digital/">digital</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            7 分钟 读完 (约 1034 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p><strong>&#x63D0;&#x95EE;&#xFF1A;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x91CC;&#x7684;remote&#x548C;local&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;</strong></p>
+<p>GPT&#x56DE;&#x7B54;&#xFF1A;</p>
+<blockquote>
+<p>&#x5728;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;remote&#x548C;local&#x901A;&#x5E38;&#x6307;&#x4EE3;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x6216;&#x8005;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x3002;</p>
+<p>remote&#x901A;&#x5E38;&#x6307;&#x6765;&#x6E90;&#x4E8E;&#x5916;&#x90E8;&#x7F51;&#x7EDC;&#x7684;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4ECE;&#x8FDC;&#x7A0B;&#x7F51;&#x7EDC;&#x53D1;&#x8D77;&#x7684;&#x8BF7;&#x6C42;&#x6216;&#x8005;&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<p>local&#x5219;&#x6307;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#x7684;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4ECE;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#x53D1;&#x8D77;&#x7684;&#x8BF7;&#x6C42;&#x6216;&#x8005;&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#x5728;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x4E2D;&#x901A;&#x5E38;&#x7528;&#x6765;&#x9650;&#x5236;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x7684;&#x65B9;&#x5411;&#x548C;&#x6765;&#x6E90;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x6027;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x8BBE;&#x7F6E;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x53EA;&#x5141;&#x8BB8;&#x6765;&#x81EA;&#x7279;&#x5B9A;&#x8FDC;&#x7A0B;&#x7F51;&#x7EDC;&#x7684;&#x6570;&#x636E;&#x6D41;&#x901A;&#x8FC7;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x5141;&#x8BB8;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#x7684;&#x67D0;&#x4E9B;&#x4E3B;&#x673A;&#x8BBF;&#x95EE;&#x7279;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x7B49;&#x3002;</p>
+</blockquote>
+<p><strong>&#x63D0;&#x95EE;&#xFF1A;&#x5982;&#x4F55;&#x7406;&#x89E3;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x91CC;&#x7684;remote&#x548C;local&#xFF0C;&#x548C;&#x5165;&#x7AD9;&#x3001;&#x51FA;&#x7AD9;&#x7684;&#x5173;&#x7CFB;&#xFF1F;</strong></p>
+<p>GPT&#x56DE;&#x7B54;&#xFF1A;</p>
+<blockquote>
+<p>&#x9632;&#x706B;&#x5899;&#x4E2D;&#x7684;remote&#x548C;local&#x4E0E;&#x5165;&#x7AD9;&#x548C;&#x51FA;&#x7AD9;&#x662F;&#x76F8;&#x5173;&#x4F46;&#x4E0D;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x6982;&#x5FF5;&#x3002;</p>
+<p>remote&#x6307;&#x7684;&#x662F;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x6240;&#x9488;&#x5BF9;&#x7684;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x7684;&#x8FDC;&#x7AEF;&#xFF0C;&#x5373;&#x6570;&#x636E;&#x6D41;&#x91CF;&#x7684;&#x6E90;&#x5934;&#x6216;&#x76EE;&#x7684;&#x5730;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x5165;&#x7AD9;&#x89C4;&#x5219;&#x53EF;&#x80FD;&#x6307;&#x5B9A;&#x4ECE;&#x67D0;&#x4E2A;IP&#x5730;&#x5740;&#xFF08;remote&#xFF09;&#x4F20;&#x5165;&#x7279;&#x5B9A;&#x7AEF;&#x53E3;&#xFF08;local&#xFF09;&#x7684;&#x6D41;&#x91CF;&#x9700;&#x8981;&#x88AB;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x9632;&#x706B;&#x5899;&#x3002;</p>
+<p>local&#x5219;&#x662F;&#x6307;&#x9632;&#x706B;&#x5899;&#x4E0A;&#x88AB;&#x4FDD;&#x62A4;&#x7684;&#x7F51;&#x7EDC;&#x672C;&#x8EAB;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x9632;&#x706B;&#x5899;&#x6240;&#x5728;&#x7684;&#x7F51;&#x7EDC;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x51FA;&#x7AD9;&#x89C4;&#x5219;&#x53EF;&#x80FD;&#x6307;&#x5B9A;&#x5141;&#x8BB8;&#x4ECE;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#xFF08;local&#xFF09;&#x901A;&#x8FC7;&#x7279;&#x5B9A;&#x7AEF;&#x53E3;&#xFF08;local&#xFF09;&#x4F20;&#x9001;&#x5230;&#x67D0;&#x4E2A;IP&#x5730;&#x5740;&#xFF08;remote&#xFF09;&#x7684;&#x6D41;&#x91CF;&#x3002;</p>
+<p>&#x5165;&#x7AD9;&#x548C;&#x51FA;&#x7AD9;&#x5219;&#x662F;&#x6307;&#x6D41;&#x91CF;&#x7684;&#x4F20;&#x8F93;&#x65B9;&#x5411;&#x3002;&#x5165;&#x7AD9;&#x6D41;&#x91CF;&#x662F;&#x6307;&#x4ECE;Internet&#x6216;&#x5176;&#x4ED6;&#x516C;&#x5171;&#x7F51;&#x7EDC;&#x6D41;&#x5165;&#x9632;&#x706B;&#x5899;&#x6240;&#x5728;&#x7684;&#x7F51;&#x7EDC;&#x7684;&#x6D41;&#x91CF;&#xFF0C;&#x800C;&#x51FA;&#x7AD9;&#x6D41;&#x91CF;&#x5219;&#x662F;&#x6307;&#x4ECE;&#x9632;&#x706B;&#x5899;&#x6240;&#x5728;&#x7684;&#x7F51;&#x7EDC;&#x6D41;&#x5411;Internet&#x6216;&#x5176;&#x4ED6;&#x516C;&#x5171;&#x7F51;&#x7EDC;&#x7684;&#x6D41;&#x91CF;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x5165;&#x7AD9;&#x548C;&#x51FA;&#x7AD9;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6D41;&#x91CF;&#x7684;&#x4F20;&#x8F93;&#x65B9;&#x5411;&#xFF0C;&#x800C;remote&#x548C;local&#x5219;&#x53EF;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x6D41;&#x91CF;&#x7684;&#x6765;&#x6E90;&#x6216;&#x76EE;&#x7684;&#x5730;&#x3002;</p>
+</blockquote>
+<p><strong>&#x63D0;&#x95EE;&#xFF1A;&#x8BF7;&#x95EE;&#x4EE5;&#x4E0B;&#x6211;&#x7684;&#x7406;&#x89E3;&#x6B63;&#x786E;&#x5417;&#xFF1A;</strong></p>
+<blockquote>
+<p>ios&#x7C98;&#x8D34;&#x677F;&#x5FEB;&#x6377;&#x6307;&#x4EE4; &#x2013;&gt;</p>
+<p>&#x2013;&gt; &#x53D1;&#x9001;&#x7F51;&#x7EDC;&#x5305;&#x5230;&#x6211;&#x7684;pc ip:8063&#x7AEF;&#x53E3;</p>
+<p>&#x2013;&gt; online-clipboard.exe&#x5728;&#x76D1;&#x542C;&#x6240;&#x6709;&#x53D1;&#x9001;&#x81F3;8063&#x7AEF;&#x53E3;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x4E8E;&#x662F;&#x5B83;&#x63A5;&#x6536;&#x5230;&#x8FD9;&#x4E2A;&#x5305;&#x8BF7;&#x6C42;</p>
+<p>&#x2013;&gt; &#x9632;&#x706B;&#x5899;&#x81EA;&#x52A8;&#x8BE2;&#x95EE;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x6765;&#x81EA;&#x5185;&#x7F51;ip 192.xx :xx&#x7AEF;&#x53E3;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x5982;&#x679C;&#x5141;&#x8BB8;&#xFF0C;&#x5219;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;tcp&#x63E1;&#x624B;&#xFF08;&#x6BD4;&#x5982;&#x8BF7;&#x6C42;&#x5185;&#x5BB9;&#x662F;&#x590D;&#x5236;&#x6216;&#x7C98;&#x8D34;&#xFF09;&#x3002;</p>
+<p>&#x2013;&gt; &#x4E00;&#x4E2A;&#x5165;&#x7AD9;&#x7684;&#x9632;&#x706B;&#x5899;&#x65E5;&#x5FD7;&#x5982;&#x4E0A;,local&#x662F;&#x672C;&#x673A;&#x5185;&#x7F51;ip:8063&#xFF0C;remote&#x662F;&#x624B;&#x673A;&#x5185;&#x7F51;ip:&#x67D0;&#x7AEF;&#x53E3;&#x3002;</p>
+</blockquote>
+<p>GPT&#x56DE;&#x7B54;&#xFF1A;</p>
+<blockquote>
+<p>&#x60A8;&#x7684;&#x7406;&#x89E3;&#x5F88;&#x63A5;&#x8FD1;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x3002;iOS&#x7C98;&#x8D34;&#x677F;&#x5FEB;&#x6377;&#x6307;&#x4EE4;&#x662F;&#x901A;&#x8FC7;&#x53D1;&#x9001;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x6765;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x3002;&#x5728;&#x8BE5;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x4F1A;&#x5411;&#x6307;&#x5B9A;&#x7684;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x5305;&#xFF0C;&#x8BE5;&#x7F51;&#x7EDC;&#x5305;&#x5305;&#x542B;&#x6709;&#x8981;&#x7C98;&#x8D34;&#x5230;&#x8FDC;&#x7A0B;PC&#x4E0A;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x7F51;&#x5361;&#x5C06;&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;&#x5305;&#x901A;&#x8FC7;&#x5C40;&#x57DF;&#x7F51;&#x53D1;&#x9001;&#x7ED9;&#x76EE;&#x6807;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x662F;8063&#x7AEF;&#x53E3;&#x5E76;&#x4E14;&#x8BE5;&#x7AEF;&#x53E3;&#x5DF2;&#x88AB;online-clipboard.exe&#x76D1;&#x542C;&#xFF0C;&#x90A3;&#x4E48;&#x6B64;&#x65F6;online-clipboard.exe&#x4F1A;&#x63A5;&#x6536;&#x5230;&#x8BE5;&#x7F51;&#x7EDC;&#x5305;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#x5BF9;&#x590D;&#x5236;&#x6216;&#x7C98;&#x8D34;&#x8FDB;&#x884C;&#x54CD;&#x5E94;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9632;&#x706B;&#x5899;&#x5F00;&#x542F;&#x4E86;&#x5165;&#x7AD9;&#x7B56;&#x7565;&#xFF0C;&#x5219;&#x4F1A;&#x68C0;&#x6D4B;&#x5230;&#x8BE5;&#x8BF7;&#x6C42;&#xFF0C;&#x7531;&#x9632;&#x706B;&#x5899;&#x5BF9;&#x8BF7;&#x6C42;&#x53D1;&#x51FA;&#x7684;&#x6E90;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x5982;&#x679C;&#x6E90;&#x5730;&#x5740;&#x662F;&#x5185;&#x7F51;ip 192.xx :xx&#x7AEF;&#x53E3;&#xFF0C;&#x5219;&#x9632;&#x706B;&#x5899;&#x4F1A;&#x81EA;&#x52A8;&#x8BE2;&#x95EE;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x8BE5;&#x8BF7;&#x6C42;&#x901A;&#x8FC7;&#x3002;&#x5982;&#x679C;&#x5141;&#x8BB8;&#xFF0C;&#x5219;&#x5B8C;&#x6210;&#x4E00;&#x6B21;TCP&#x63E1;&#x624B;&#xFF0C;&#x6570;&#x636E;&#x5C31;&#x80FD;&#x6B63;&#x5E38;&#x4F20;&#x9001;&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x5165;&#x7AD9;&#x9632;&#x706B;&#x5899;&#x7684;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x4E86;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#xFF0C;&#x5E76;&#x663E;&#x793A;&#x4E86;&#x672C;&#x673A;&#x7684;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x53F7;&#x4EE5;&#x53CA;&#x8BBE;&#x5907;&#x7684;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</p>
+</blockquote>
+<p>&#x6700;&#x540E;&#xFF0C;&#x4E00;&#x4E2A;&#x622A;&#x56FE;&#x8BB0;&#x5F55;&#x8FD9;&#x6B21;&#x6DFB;&#x52A0;&#x7684;&#x89C4;&#x5219;&#x3002;</p>
+<p><img src="/content/images/2023/03/2023_0308_1627.jpg"></p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/gpt/">#gpt</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/post/Recording-a-Node-debugging-session/">Node/npm一次debug</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/post/Quickly-capturing-screenshots-of-streaming-videos-to-a-file/">流媒体视频快速截图至文件</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2023 FINE&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
