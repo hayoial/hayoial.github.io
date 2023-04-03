@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>标签 - 闲情偶寄</title>
+<title>Node/npm一次debug - 闲情偶寄</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -16,27 +16,17 @@
 
 
 
-    <meta name="description" content="我就是一个奇怪的网海冲浪客。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="闲情偶寄">
-<meta property="og:url" content="https://imhay.eu.org/tags/">
+    <meta name="description" content="&amp;#x4E4B;&amp;#x524D;&amp;#x88C5;&amp;#x4E00;&amp;#x4E2A;chatgpt&amp;#x7FFB;&amp;#x8BD1;&amp;#x7684;&amp;#x5305;&amp;#xFF0C;&amp;#x63D0;&amp;#x793A;node&amp;#x7248;&amp;#x672C;&amp;#x4F4E;&amp;#xFF0C;&amp;#x4E8E;&amp;#x662F;&amp;#x5347;&amp;#x7EA7;&amp;#x4E86;&amp;#x6700;&amp;#x65B0;&amp;#x76">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node&#x2F;npm一次debug">
+<meta property="og:url" content="https://imhay.eu.org/post/recording-a-node-debugging-session/">
 <meta property="og:site_name" content="闲情偶寄">
-<meta property="og:description" content="我就是一个奇怪的网海冲浪客。">
+<meta property="og:description" content="&amp;#x4E4B;&amp;#x524D;&amp;#x88C5;&amp;#x4E00;&amp;#x4E2A;chatgpt&amp;#x7FFB;&amp;#x8BD1;&amp;#x7684;&amp;#x5305;&amp;#xFF0C;&amp;#x63D0;&amp;#x793A;node&amp;#x7248;&amp;#x672C;&amp;#x4F4E;&amp;#xFF0C;&amp;#x4E8E;&amp;#x662F;&amp;#x5347;&amp;#x7EA7;&amp;#x4E86;&amp;#x6700;&amp;#x65B0;&amp;#x76">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-08T16:57:00.000Z">
+<meta property="article:modified_time" content="2023-04-03T06:29:55.152Z">
 <meta property="article:author" content="Fine">
-<meta property="article:tag" content="lifestyle">
-<meta property="article:tag" content="thoughts">
-<meta property="article:tag" content="gpt">
-<meta property="article:tag" content="digital">
-<meta property="article:tag" content="surfing">
-<meta property="article:tag" content="myway">
-<meta property="article:tag" content="dns">
-<meta property="article:tag" content="win">
-<meta property="article:tag" content="english">
-<meta property="article:tag" content="blogging">
-<meta property="article:tag" content="software">
 <meta property="article:tag" content="coding">
-<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
 
 
@@ -122,70 +112,71 @@
     </div>
 </nav>
 
-    <section class="section section-heading">
+    <section class="section">
     <div class="container">
-        <div class="content">
-            <h5>#标签</h5>
-        </div>
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            Node/npm一次debug
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2023-03-08T16:57:00.000Z" itemprop="datePublished">3月 9 2023</time>
+                <span class="second-date-block"> (3月 9 2023)</span>
+            
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/digital/">digital</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            2 分钟 读完 (约 270 字)
+        </span>
+        
     </div>
-</section>
-<section class="section">
-    <div class="container">
-        <div class="columns is-variable is-1 is-multiline is-mobile">
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>&#x4E4B;&#x524D;&#x88C5;&#x4E00;&#x4E2A;chatgpt&#x7FFB;&#x8BD1;&#x7684;&#x5305;&#xFF0C;&#x63D0;&#x793A;node&#x7248;&#x672C;&#x4F4E;&#xFF0C;&#x4E8E;&#x662F;&#x5347;&#x7EA7;&#x4E86;&#x6700;&#x65B0;&#x7684;&#xFF0C;&#x8FD8;&#x8981;npm&#x4E00;&#x8D77;&#x5347;&#x7EA7;&#x4E86;&#x3002;</p>
+<p>&#x7ED3;&#x679C;&#x6211;&#x7684;hexo&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x5C31;&#x663E;&#x793A;&#x7684;&#x602A;&#x602A;&#x7684;&#xFF0C;&#x6700;&#x5927;&#x7684;bug&#x662F;&#x641C;&#x7D22;&#x680F;&#xFF0C;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;html/css&#x6E32;&#x67D3;&#x5B8C;&#x5168;&#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4E00;&#x5F00;&#x59CB;&#x8FD8;&#x4EE5;&#x4E3A;&#x662F;&#x6211;&#x4FEE;&#x6539;&#x4E86;&#x4E3B;&#x9898;&#x7684;&#x67D0;&#x4E9B;&#x8BBE;&#x7F6E;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x5404;&#x79CD;&#x63A7;&#x5236;&#x53D8;&#x91CF;&#x6CD5;&#x6392;&#x67E5;&#x4E86;&#x534A;&#x5929;&#xFF0C;&#x53D1;&#x73B0;&#x548C;&#x4E3B;&#x9898;&#x6CA1;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x90A3;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x54EA;&#x4E86;&#xFF0C;&#x641C;&#x7D22;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x73B0;&#x6211;&#x7528;&#x7684;hexo&#x4E3B;&#x9898;&#x7684;github&#x9875;&#x6709;&#x4E00;&#x4E2A; <a target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos/issues/128">issue</a>&#xFF0C;&#x5C31;&#x662F;&#x548C;&#x6211;&#x4E00;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x8FD9;&#x91CC;&#x6211;&#x5B9A;&#x4F4D;&#x5230;&#x4E86;&#x662F;node-sass&#x7684;&#x7248;&#x672C;&#x8DDF;&#x4E0D;&#x4E0A;&#x4E86;&#x3002;</p>
+<p>&#x672C;&#x6765;&#x8FD9;&#x91CC;&#x5C31;&#x5E94;&#x8BE5;&#x5F88;&#x597D;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x4F46;&#x4E4B;&#x524D;&#x5347;&#x7EA7;node&#x5BFC;&#x81F4;&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x9664;&#x4E86;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x4E00;&#x5F00;&#x59CB;&#x4FEE;&#x590D;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;npm&#x5C31;&#x4E00;&#x76F4;&#x62A5;&#x9519;&#xFF0C;&#x6211;&#x5E9F;&#x4E86;&#x597D;&#x591A;&#x529F;&#x592B;&#x624D;&#x660E;&#x767D;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E0A;&#x3002;&#x73B0;&#x5728;&#x7EC8;&#x4E8E;&#x5168;&#x89E3;&#x51B3;&#x4E86;&#x3002;</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/coding/">#coding</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/lifestyle/">#lifestyle&nbsp;(3)</a>
-            </span>
+            <a href="/post/notebook-lag-during-typing/">笔记本卡到打字卡顿</a>
             
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/thoughts/">#thoughts&nbsp;(14)</a>
-            </span>
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/gpt/">#gpt&nbsp;(4)</a>
-            </span>
+            <a href="/post/a-record-of-learning-about-firewalls-through-chatgpt/">一次通过ChatGPT学习防火墙知识的记录</a>
             
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/digital/">#digital&nbsp;(4)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/surfing/">#surfing&nbsp;(2)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/myway/">#myway&nbsp;(7)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/dns/">#dns&nbsp;(2)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/win/">#win&nbsp;(2)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/english/">#english&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/blogging/">#blogging&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/software/">#software&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/coding/">#coding&nbsp;(2)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/github/">#github&nbsp;(1)</a>
-            </span>
-            
-        </div>
+        </span>
+    </div>
+    
+</article>
+
+
+
+
     </div>
 </section>
     <footer class="footer">
